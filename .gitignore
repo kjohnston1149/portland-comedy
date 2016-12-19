@@ -16,5 +16,4 @@
 npm-debug.log*
 testem.log
 client_secret.json
-quickstart.js
 calendar-nodejs-quickstart.json
