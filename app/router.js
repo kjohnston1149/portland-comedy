@@ -8,6 +8,8 @@ const Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('open-mic');
+  this.route('showcases');
+  this.route('links');
 });
 
 export default Router;
