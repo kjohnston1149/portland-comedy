@@ -1,0 +1,39 @@
+.navbar {
+  background-color: $navbar;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 15%;
+  width: 100vw;
+  margin-bottom: 20px;
+  @media only screen and (#{$break-tablet}) {
+    flex-direction: column;
+    height: 100%;
+    padding-bottom: 5px;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    @media only screen and (#{$break-tablet}) {
+      width: 70%;
+    }
+    @media only screen and (#{$break-mobile}) {
+      width: 90%;
+    }
+    li {
+      a {
+        transition: color 250ms ease-in-out;
+      &:hover {
+        color: $accent-color;
+      }
+    }
+
+    }
+  }
+  img {
+    height: 8rem;
+  }
+}
