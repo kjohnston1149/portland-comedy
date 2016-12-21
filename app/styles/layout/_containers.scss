@@ -38,3 +38,26 @@
 .small-img-4{
   @include background-img("../assets/img/jake-s.jpg");
 }
+
+.top-img {
+  height: 600px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+
+
+}
+
+#open-mic-img {
+  @include background-img("../assets/img/rochelle-c.jpg");
+  h1 {
+    align-self: flex-start;
+    margin-top: 20%;
+  }
+}
+#showcases-img {
+  @include background-img("../assets/img/tony-c.jpg");
+  h1 {
+    align-self: center;
+  }
+}
