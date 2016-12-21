@@ -11,4 +11,8 @@
       Authorize
     </button>
   </div>
-  <pre id="output"></pre>
+<ul>
+  {{#each model.events as |event|}}
+      {{open-mic-tile event=event}}
+    {{/each}}
+    </ul>

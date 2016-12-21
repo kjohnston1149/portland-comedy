@@ -4,7 +4,7 @@ import Ember from 'ember';
 export default Ember.Route.extend({
   model: function () {
     $.getScript("https://apis.google.com/js/client.js?onload=checkAuth", function() {
-    
+
     }).then( function handleAuthClick(event) {
        gapi.auth.authorize(
          {client_id: CLIENT_ID, scope: SCOPES, immediate: false},
@@ -71,21 +71,26 @@ export default Ember.Route.extend({
 
     request.execute(function(resp) {
       var events = resp.items;
-      appendPre('Upcoming events:');
+      console.log(events);
+
+      // appendPre('Upcoming events:');
 
       if (events.length > 0) {
         for (var i = 0; i < events.length; i++) {
           var event = events[i];
           var when = event.start.dateTime;
+          var description = event.description;
+          console.log(description);
+
           if (!when) {
             when = event.start.date;
           }
-          appendPre(event.summary + ' (' + when + ')')
+          // appendPre(event.summary + ' (' + when + ')')
         }
       } else {
-        appendPre('No upcoming events found.');
+        // appendPre('No upcoming events found.');
       }
-
+      return (events);
     });
   }
 
@@ -95,11 +100,11 @@ export default Ember.Route.extend({
    *
    * @param {string} message Text to be placed in pre element.
    */
-  function appendPre(message) {
-    var pre = document.getElementById('output');
-    var textContent = document.createTextNode(message + '\n');
-    pre.appendChild(textContent);
-  }
+  // function appendPre(message) {
+  //   var pre = document.getElementById('output');
+  //   var textContent = document.createTextNode(message + '\n');
+  //   pre.appendChild(textContent);
+  // }
 
 }
 }
