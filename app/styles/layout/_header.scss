@@ -29,13 +29,14 @@
     li {
       a {
         transition: background 250ms ease-in-out;
+        padding: 20px;
+        border-radius: 10%;
+
       &:hover {
         background: lighten($accent-color, 10%);
-        border-radius: 10%;
-        padding: 20px;
+        }
         @media only screen and (#{$break-tablet}) {
           padding: 2px 10px;
-        }
       }
     }
     }
