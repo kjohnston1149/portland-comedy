@@ -1,1 +1,40 @@
+.img-gallery {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  flex-wrap: wrap;
+    [class*="big-img-"]{
+      flex: 2;
+      flex-basis: 480px;
+      height: 420px;
+      display: flex;
+      justify-content: flex-start;
+    }
+    [class*="small-img-"] {
+      flex: 1;
+      flex: 240px;
+      height: 420px;
+      display: flex;
+      justify-content: flex-start;
+    }
+}
+.big-img-1{
+  @include background-img("../assets/img/rafferty.jpg");
+}
 
+.big-img-2{
+  @include background-img("../assets/img/nick-p.jpg");
+}
+
+.small-img-1{
+  @include background-img("../assets/img/nariko.jpg");
+}
+.small-img-2{
+  @include background-img("../assets/img/andie-m.jpg");
+}
+.small-img-3{
+  @include background-img("../assets/img/jon-w.jpg");
+}
+.small-img-4{
+  @include background-img("../assets/img/jake-s.jpg");
+}
