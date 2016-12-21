@@ -51,6 +51,14 @@
   @include background-img("../assets/img/jake-s.jpg");
 }
 
+.index-text {
+  align-self: center;
+  display: flex;
+  justify-content: center;
+  margin: 5px 0;
+  font-size: 1.5rem;
+}
+
 .link-tiles {
   margin-bottom: 5%;
   display: flex;

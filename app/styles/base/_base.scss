@@ -8,6 +8,7 @@
 body {
   background: darken($navbar, 10%);
   display: flex;
+  justify-content: center;
   align-content: center;
   margin-right: auto;
   margin: auto;
@@ -17,11 +18,4 @@ body {
   justify-content: space-between;
   background-image: url('../assets/img/bg.png');
   max-width: 1200px;
-}
-h4  {
-
-  transition: color 300ms ease-in-out;
-  &:hover {
-    color: red;
-  }
 }
