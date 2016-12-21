@@ -6,12 +6,16 @@
 }
 
 body {
-  background: darken($navbar, 20%);
+  background: darken($navbar, 10%);
+  align-content: center;
+  margin-right: auto;
+  margin: auto;
   display: flex;
   height: 100vh;
   flex-direction: column;
   justify-content: space-between;
-  background-image: url('../assets/img/bg.png')
+  background-image: url('../assets/img/bg.png');
+  max-width: 1200px;
 }
 h4  {
 
