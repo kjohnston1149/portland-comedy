@@ -11,7 +11,7 @@
   // border-top: 5px solid $accent-color;
   // border-bottom: 5px solid $accent-color;
   background-color: transparentize($accent-color, 0.5);
-  border-radius: 30%;
+  border-radius: 10px;
   @media only screen and (#{$break-tablet}) {
     font-size: 3rem;
   }
