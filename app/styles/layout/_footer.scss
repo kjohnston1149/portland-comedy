@@ -1,5 +1,6 @@
 .footer {
   // width: 100vw;
+  @include clearfix;
   align-self: flex-end;
   display: flex;
   justify-content: center;

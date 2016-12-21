@@ -7,6 +7,12 @@
       flex: 2;
       // flex-basis: 480px;
       height: 20rem;
+      @media only screen and (#{$break-tablet}) {
+        height: 15rem;
+      }
+      @media only screen and (#{$break-mobile}) {
+        height: 10rem;
+      }
       display: flex;
       justify-content: flex-start;
     }
@@ -14,6 +20,12 @@
       flex: 1;
       // flex: 240px;
       height: 20rem;
+      @media only screen and (#{$break-tablet}) {
+        height: 15rem;
+      }
+      @media only screen and (#{$break-mobile}) {
+        height: 10rem;
+      }
       display: flex;
       justify-content: flex-start;
     }
@@ -40,18 +52,29 @@
 }
 
 .link-tiles {
-  margin-top: 5%;
+  margin-bottom: 5%;
   display: flex;
   // width: 100vw;
-  height: 400px;
+  height: 100%;
   justify-content: space-around;
   flex-wrap: wrap;
+  @include clearfix;
+  @media only screen and (#{$break-mobile}) {
+    flex-direction: column;
+    @include span-columns(12);
+  }
   .tile {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
+    height: 300px;
     width: 25%;
+    @media only screen and (#{$break-tablet}) {
+      width: 30%;
+    }
+    @media only screen and (#{$break-mobile}) {
+      width: 100%;
+    }
   }
 }
 #o-m-link {
@@ -68,6 +91,12 @@
   position: relative;
   display: flex;
   justify-content: center;
+  @media only screen and (#{$break-tablet}) {
+    height: 400px;
+  }
+  @media only screen and (#{$break-mobile}) {
+    height: 300px;
+  }
 }
 
 #open-mic-img {

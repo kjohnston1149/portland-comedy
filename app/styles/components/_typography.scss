@@ -12,4 +12,10 @@
   // border-bottom: 5px solid $accent-color;
   background-color: transparentize($accent-color, 0.5);
   border-radius: 30%;
+  @media only screen and (#{$break-tablet}) {
+    font-size: 3rem;
+  }
+  @media only screen and (#{$break-mobile}) {
+    width: 85%;
+  }
 }
