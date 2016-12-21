@@ -39,13 +39,22 @@
   @include background-img("../assets/img/jake-s.jpg");
 }
 
+.link-tiles {
+  width: 100vw;
+  height: 500px;
+  .tile {
+    height: 75%;
+  }
+}
+#o-m-tile {
+  @include background-img('..assets/img/avalon.jpg');
+}
+
 .top-img {
   height: 600px;
   position: relative;
   display: flex;
   justify-content: center;
-
-
 }
 
 #open-mic-img {
