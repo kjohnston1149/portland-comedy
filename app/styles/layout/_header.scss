@@ -28,9 +28,11 @@
     }
     li {
       a {
-        transition: color 250ms ease-in-out;
+        transition: background 250ms ease-in-out;
       &:hover {
-        color: $accent-color;
+        background: lighten($accent-color, 10%);
+        border-radius: 10%;
+        font-weight: 700;
       }
     }
     }
