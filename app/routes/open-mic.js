@@ -12,7 +12,7 @@ export default Ember.Route.extend({
     var eventsArray = [];
 
     $.getScript("https://apis.google.com/js/client.js?onload=checkAuth", function() {
-    }).then( function handleAuthClick() {
+    }).then(function handleAuthClick() {
        gapi.auth.authorize(
          {client_id: CLIENT_ID, scope: SCOPES, immediate: false},
          handleAuthResult);
@@ -71,6 +71,7 @@ export default Ember.Route.extend({
           var when = event.start.dateTime;
 
           var description = event.description;
+          $('.test').append('<h3>' + description + '</h3>')
           console.log(description);
         }
       }
