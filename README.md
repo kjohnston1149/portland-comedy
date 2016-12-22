@@ -29,6 +29,8 @@ You will need the following things properly installed on your computer.
 
 * If pop-ups are blocked on the site, the Google Calendar API cannot authorize the app on a computer.  This may be fixed with further manipulation of the API code.
 
+* Currently requires user to use a Google Account to authorize API.  Cannot access the API if not logged into an account.
+
 ### Code Generators
 
 Make use of the many generators for code, try `ember help generate` for more details
