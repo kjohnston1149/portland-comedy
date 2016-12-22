@@ -2,23 +2,21 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   model: function () {
-    $.getScript("https://apis.google.com/js/client.js?onload=checkAuth", function() {
-
-    }).then( function handleAuthClick(event) {
-       gapi.auth.authorize(
-         {client_id: CLIENT_ID, scope: SCOPES, immediate: false},
-         handleAuthResult);
-       return false;
-}
-
-
-
-    );
     // Your Client ID can be retrieved from your project in the Google
     // Developer Console, https://console.developers.google.com
     var CLIENT_ID = '474937019011-ck824t8cts8ls81hovh552nn10oovlgd.apps.googleusercontent.com';
 
     var SCOPES = ["https://www.googleapis.com/auth/calendar.readonly"];
+
+    var eventsArray = [];
+
+    $.getScript("https://apis.google.com/js/client.js?onload=checkAuth", function() {
+    }).then(function handleAuthClick() {
+       gapi.auth.authorize(
+         {client_id: CLIENT_ID, scope: SCOPES, immediate: false},
+         handleAuthResult);
+       return false;
+    });
 
     /**
      * Check if current user has authorized this application.
@@ -49,16 +47,10 @@ export default Ember.Route.extend({
       }
     }
 
-    /**
-     * Initiate auth flow in response to user clicking authorize button.
-     *
-     * @param {Event} event Button click event.
-     */
-
     function loadCalendarApi() {
       gapi.client.load('calendar', 'v3', listUpcomingEvents);
     }
-  function listUpcomingEvents() {
+  function listUpcomingEvents(events) {
     var request = gapi.client.calendar.events.list({
       'calendarId': 'orf66oh318gp812qcbm45buero@group.calendar.google.com',
       'timeMin': (new Date()).toISOString(),
@@ -70,36 +62,34 @@ export default Ember.Route.extend({
 
     request.execute(function(resp) {
       var events = resp.items;
-      appendPre('Upcoming events:');
+      console.log(events);
 
       if (events.length > 0) {
         for (var i = 0; i < events.length; i++) {
           var event = events[i];
+          var name = event.summary;
+          $('.display').append('<h1>' + name + '</h1>');
           var when = event.start.dateTime;
-          if (!when) {
-            when = event.start.date;
+          $('.display').append('<h2>' + when + '</h2>');
+          var where = event.location;
+          if (where == null) {
+            $('.display').append('')
+          } else {
+          $('.display').append('<h2>' + where + '</h2>');
           }
-          appendPre(event.summary + ' (' + when + ')')
+          var description = event.description;
+          if (description == null) {
+            $('.display').append('<br>')
+          } else {
+            $('.display').append('<h3>' + description + '</h3><br>');
+            console.log(description);
+          }
+
         }
-      } else {
-        appendPre('No upcoming events found.');
       }
-
     });
-  }
 
-  /**
-   * Append a pre element to the body containing the given message
-   * as its text node.
-   *
-   * @param {string} message Text to be placed in pre element.
-   */
-  function appendPre(message) {
-    var pre = document.getElementById('output');
-    var textContent = document.createTextNode(message + '\n');
-    pre.appendChild(textContent);
-  }
+    }
 
 }
-
 });
