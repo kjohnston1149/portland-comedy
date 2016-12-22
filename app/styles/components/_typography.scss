@@ -2,14 +2,12 @@
   text-align: center;
   position: absolute;
   width: 75%;
-  left: 15%;
+  left: 12%;
   top: 40%;
   z-index: 1;
   font-size: 5rem;
   letter-spacing: 2px;
   text-transform: uppercase;
-  // border-top: 5px solid $accent-color;
-  // border-bottom: 5px solid $accent-color;
   background-color: transparentize($accent-color, 0.5);
   border-radius: 10px;
   @media only screen and (#{$break-tablet}) {
@@ -17,5 +15,7 @@
   }
   @media only screen and (#{$break-mobile}) {
     width: 85%;
+    left: 6%;
+    right: 6%;
   }
 }

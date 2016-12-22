@@ -1,8 +1,10 @@
 import config from '../config/environment';
+import moment from 'moment';
 import Ember from 'ember';
 
 export default Ember.Route.extend({
   model: function () {
+
     // Your Client ID can be retrieved from your project in the Google
     // Developer Console, https://console.developers.google.com
     var CLIENT_ID = '474937019011-ck824t8cts8ls81hovh552nn10oovlgd.apps.googleusercontent.com';
@@ -10,6 +12,8 @@ export default Ember.Route.extend({
     var SCOPES = ["https://www.googleapis.com/auth/calendar.readonly"];
 
     var eventsArray = [];
+
+    // var moment = require('moment');
 
     $.getScript("https://apis.google.com/js/client.js?onload=checkAuth", function() {
     }).then(function handleAuthClick() {
@@ -71,7 +75,7 @@ export default Ember.Route.extend({
           var name = event.summary;
           $('.display').append('<h1>' + name + '</h1>');
           var when = event.start.dateTime;
-          $('.display').append('<h2>' + when + '</h2>');
+          $('.display').append('<h2>' + moment(when).format("dddd, MMMM Do YYYY, h:mm a") + '</h2>');
           var where = event.location;
           if (where == null) {
             $('.display').append('')
