@@ -68,19 +68,20 @@ export default Ember.Route.extend({
       if (events.length > 0) {
         for (var i = 0; i < events.length; i++) {
           var event = events[i];
+          var name = event.summary;
+          $('.display').append('<h1>' + name + '</h1>');
           var when = event.start.dateTime;
-
+          $('.display').append('<h2>' + when + '</h2>');
+          var where = event.location;
+          $('.display').append('<h2>' + where + '</h2>');
           var description = event.description;
-          $('.test').append('<h3>' + description + '</h3><br>')
+          $('.display').append('<h3>' + description + '</h3><br>');
           console.log(description);
         }
       }
     });
 
     }
-// $.when.apply($, listUpcomingEvents).done(function() {
-//   eventsArray.push(events);
-// });
-return eventsArray;
+
 }
 });
