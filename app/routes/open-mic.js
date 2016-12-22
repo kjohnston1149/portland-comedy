@@ -73,10 +73,19 @@ export default Ember.Route.extend({
           var when = event.start.dateTime;
           $('.display').append('<h2>' + when + '</h2>');
           var where = event.location;
+          if (where == null) {
+            $('.display').append('')
+          } else {
           $('.display').append('<h2>' + where + '</h2>');
+          }
           var description = event.description;
-          $('.display').append('<h3>' + description + '</h3><br>');
-          console.log(description);
+          if (description == null) {
+            $('.display').append('<br>')
+          } else {
+            $('.display').append('<h3>' + description + '</h3><br>');
+            console.log(description);
+          }
+
         }
       }
     });
