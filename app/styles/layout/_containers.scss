@@ -62,11 +62,10 @@
 .link-tiles {
   margin-bottom: 5%;
   display: flex;
-  // width: 100vw;
+   // width: 100vw;
   height: 100%;
   justify-content: space-around;
   // flex-wrap: wrap;
-  @include clearfix;
   @media only screen and (#{$break-mobile}) {
     flex-direction: column;
 
@@ -83,11 +82,9 @@
     }
     @media only screen and (#{$break-mobile}) {
       width: 100%;
-      // @include span-columns(12);
+
     }
-    h2 {
-      z-index: 1;
-    }
+
   }
 }
 #o-m-link {

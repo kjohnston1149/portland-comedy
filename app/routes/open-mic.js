@@ -71,7 +71,7 @@ export default Ember.Route.extend({
           var when = event.start.dateTime;
 
           var description = event.description;
-          $('.test').append('<h3>' + description + '</h3>')
+          $('.test').append('<h3>' + description + '</h3><br>')
           console.log(description);
         }
       }
