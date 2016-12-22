@@ -63,7 +63,6 @@ export default Ember.Route.extend({
 
     request.execute(function(resp) {
       var events = resp.items;
-      console.log(events);
 
       if (events.length > 0) {
         for (var i = 0; i < events.length; i++) {
@@ -80,10 +79,9 @@ export default Ember.Route.extend({
           }
           var description = event.description;
           if (description == null) {
-            $('.display').append('<br>')
+            $('.display').append('<br><hr><br>')
           } else {
-            $('.display').append('<h3>' + description + '</h3><br>');
-            console.log(description);
+            $('.display').append('<h3>' + description + '</h3><br><hr><br>');
           }
 
         }

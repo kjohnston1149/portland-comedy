@@ -1,24 +1,12 @@
-
-<h2>Hey look it's the open mic stuff</h2>
 <div class="top-img" id="open-mic-img">
   <h1 class="top-text">Open Mics</h1>
 </div>
-
-{{ log model }}
-
-<div id="authorize-div">
-    <span>Authorize access to Google Calendar API</span>
-    <!--Button for the user to click to initiate auth sequence -->
-    <button id="authorize-button" onclick="handleAuthClick(event)">
-      Authorize
-    </button>
-  </div>
   <div class="display">
-
+    <div id="authorize-div">
+        <span>Click here to view upcoming events:</span>
+        <!--Button for the user to click to initiate auth sequence -->
+        <button id="authorize-button" onclick="handleAuthClick(event)">
+          Authorize
+        </button>
+      </div>
   </div>
-<ul>
-  {{#each model.events as |event|}}
-
-      {{open-mic-tile event=event}}
-    {{/each}}
-    </ul>
