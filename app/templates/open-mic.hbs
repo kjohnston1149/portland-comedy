@@ -4,6 +4,8 @@
   <h1 class="top-text">Open Mics</h1>
 </div>
 
+{{ log model }}
+
 <div id="authorize-div">
     <span>Authorize access to Google Calendar API</span>
     <!--Button for the user to click to initiate auth sequence -->
@@ -13,6 +15,7 @@
   </div>
 <ul>
   {{#each model.events as |event|}}
+
       {{open-mic-tile event=event}}
     {{/each}}
     </ul>
