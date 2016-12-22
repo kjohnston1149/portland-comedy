@@ -67,6 +67,7 @@ export default Ember.Route.extend({
       if (events.length > 0) {
         for (var i = 0; i < events.length; i++) {
           var event = events[i];
+          console.log(event);
           var name = event.summary;
           $('.display').append('<h1>' + name + '</h1>');
           var when = event.start.dateTime;

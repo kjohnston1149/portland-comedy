@@ -119,7 +119,6 @@
   }
 
 }
-
 #open-mic-img {
   @include background-img("../assets/img/rochelle-c.jpg");
   .top-text {
@@ -137,5 +136,21 @@
   @include background-img("../assets/img/dma.jpg");
   .top-text {
     margin-top: 8%;
+  }
+}
+
+.display {
+  align-self: center;
+  line-height: 1.5;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  margin: 5px;
+  hr {
+    width: 75%;
+    align-self: center;
   }
 }
