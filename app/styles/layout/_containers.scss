@@ -5,7 +5,6 @@
   flex-wrap: wrap;
     [class*="big-img-"]{
       flex: 2;
-      // flex-basis: 480px;
       height: 20rem;
       @media only screen and (#{$break-tablet}) {
         height: 15rem;
@@ -18,7 +17,6 @@
     }
     [class*="small-img-"] {
       flex: 1;
-      // flex: 240px;
       height: 20rem;
       @media only screen and (#{$break-tablet}) {
         height: 15rem;
@@ -51,21 +49,11 @@
   @include background-img("../assets/img/jake-s.jpg");
 }
 
-// .index-text {
-//   align-self: center;
-//   display: flex;
-//   justify-content: center;
-//   margin: 5px 0;
-//   font-size: 1.5rem;
-// }
-
 .link-tiles {
   margin: 5% 0;
   display: flex;
-   // width: 100vw;
   height: 100%;
   justify-content: space-around;
-  // flex-wrap: wrap;
   @media only screen and (#{$break-mobile}) {
     flex-direction: column;
 
@@ -91,8 +79,12 @@
     }
     h2 {
       font-size: 2.73rem;
+      // &:hover {
+      //   color: lighten($accent-color, 20%);
+      // }
       @media only screen and (#{$break-tablet}) {
         font-size: 2rem;
+
       }
 
     }
@@ -134,8 +126,8 @@
 #open-mic-img {
   @include background-img("../assets/img/rochelle-c.jpg");
   .top-text {
-    align-self: flex-start;
-    margin-top: 20%;
+    align-self: center;
+    // margin-top: 20%;
   }
 }
 #showcases-img {
@@ -153,7 +145,7 @@
 
 .display {
   align-self: center;
-  line-height: 1.5;
+  line-height: 1.75;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -161,6 +153,12 @@
   align-content: center;
   flex-wrap: wrap;
   margin: 5px;
+  a {
+    text-decoration: underline;
+    &:hover {
+      color: lighten($accent-color, 20%);
+    }
+  }
 
   @media only screen and (#{$break-mobile}) {
     // transform: scale(0.9);
