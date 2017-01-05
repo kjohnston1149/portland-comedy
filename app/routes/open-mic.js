@@ -61,7 +61,7 @@ export default Ember.Route.extend({
       'timeMin': (new Date()).toISOString(),
       'showDeleted': false,
       'singleEvents': true,
-      'maxResults': 10,
+      'maxResults': 20,
       'orderBy': 'startTime'
     });
 
