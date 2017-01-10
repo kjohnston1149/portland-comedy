@@ -5,6 +5,10 @@
   text-decoration: none;
 }
 
+::selection {
+  background: lighten($accent-color, 40%);
+}
+
 body {
   background: darken($navbar, 10%);
   display: flex;
