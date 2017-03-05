@@ -1,7 +1,7 @@
 # Portland-comedy
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+The original project for the pdxstandup.com project.  To see the active, refactored project, please see https://github.com/kjohnston1149/pdx-comedy
+
 
 ## Prerequisites
 
